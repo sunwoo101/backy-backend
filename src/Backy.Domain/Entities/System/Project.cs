@@ -22,7 +22,7 @@ public class Project : BaseEntity
     /// The globally unique identifier for this project.
     /// Safe to expose publicly in frontend code.
     /// </summary>
-    public Guid ProjectGuid { get; private set; } = Guid.NewGuid();
+    public Guid ProjectId { get; private set; } = Guid.NewGuid();
 
     /// <summary>
     /// Developers who have access to this project (including the owner).
