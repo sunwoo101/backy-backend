@@ -11,7 +11,7 @@ public class Project : BaseEntity
     /// <summary>
     /// The display name of the project.
     /// </summary>
-    public string Name { get; set; } = string.Empty;
+    public required string Name { get; set; }
 
     /// <summary>
     /// The developer who owns this project.

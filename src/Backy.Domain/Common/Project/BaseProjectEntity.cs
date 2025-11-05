@@ -12,5 +12,5 @@ public abstract class BaseProjectEntity : BaseEntity
     /// The unique identifier of the project that owns this entity.
     /// Must be explicitly provided when creating the object.
     /// </summary>
-    public required Guid ProjectId { get; set; }
+    public Guid ProjectId { get; set; } = Guid.NewGuid();
 }
