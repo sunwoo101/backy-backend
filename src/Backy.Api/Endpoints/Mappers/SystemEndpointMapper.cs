@@ -12,5 +12,6 @@ public static class SystemEndpointMapper
 
         // Auth
         app.MapRegister();
+        app.MapLogin();
     }
 }

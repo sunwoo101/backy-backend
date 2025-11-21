@@ -11,6 +11,7 @@ public static class ApplicationDependencyInjection
         // System
         services.AddScoped<PingHandler>();
         services.AddScoped<RegisterHandler>();
+        services.AddScoped<LoginHandler>();
 
         // Project
 
