@@ -26,4 +26,9 @@ public sealed class DeveloperRepository(BackyDbContext db) : IDeveloperRepositor
     {
         return await db.Developers.FirstOrDefaultAsync(d => d.Email == normalizedEmail);
     }
+
+    public async Task<Developer?> GetByEmailOrUsernameAsync(string normalizedIdentifier)
+    {
+        return await db.Developers.FirstOrDefaultAsync(d => d.Email == normalizedIdentifier || d.Username == normalizedIdentifier);
+    }
 }
