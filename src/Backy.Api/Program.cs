@@ -1,5 +1,6 @@
 using Backy.Api.Endpoints.Mappers;
 using Backy.Application.DependencyInjection;
+using Backy.Infrastructure.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,7 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddApplication();
+builder.Services.AddInfrastructure();
 
 var app = builder.Build();
 

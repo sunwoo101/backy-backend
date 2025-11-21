@@ -4,7 +4,7 @@
 These endpoints are used by developers via the Backy developer dashboard and require System authentication to prevent Project Users from calling them.
 
 ### Developer
-- [ ] Developer registration
+- [x] Developer registration
 - [ ] Developer login
 - [ ] Developer logout
 - [ ] Refresh token support
@@ -21,7 +21,6 @@ These endpoints are used by developers via the Backy developer dashboard and req
 - [ ] Get Project Settings
 - [ ] Get Project audit logs
 - [ ] Edit allowed origins for CORS
-- [ ] Edit JWT configuration
 - [ ] Create Project Global Variable (type is chosen by developer. value can only be changed in the developer dashboard)
 - [ ] Create Project User Variable (developer chooses the type and initial value. if it stores json data the developer must include the json schema)
 - [ ] Create Project Protected User Variable (these can only be changed if the Project User paid for the feature)
@@ -71,6 +70,7 @@ These are features within the Backy system.
 
 ### Security
 - [ ] Enforce all client-facing APIs with per-project CORS and JWT
+- [ ] Automatically generate JWT configuration for Projects based on domain name
 - [ ] Rate limiting
 - [ ] API quota
 - [ ] Abuse detection
@@ -94,3 +94,14 @@ These are features within the Backy system.
 - Public IDs (e.g., `PublicProjectId`) must never expose internal primary keys. Project-Level Endpoints calls must include PublicProjectId instead of Project.Id/ProjectId
 - Use the prefix `public` for any properties that are used in a Project frontend
 - All client-facing APIs enforce CORS, per-project configuration, and strict validation.
+
+---
+
+## Examples of Applications Supported by Backy
+- Note taking
+- Habit tracking
+- Fitness tracking
+- Reading/learning
+- Productivity
+- Todo
+- Virtual pet
