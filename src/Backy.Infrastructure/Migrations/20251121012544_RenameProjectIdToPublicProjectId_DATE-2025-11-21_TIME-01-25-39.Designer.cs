@@ -3,6 +3,7 @@ using System;
 using Backy.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backy.Infrastructure.Migrations
 {
     [DbContext(typeof(BackyDbContext))]
-    partial class BackyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251121012544_RenameProjectIdToPublicProjectId_DATE-2025-11-21_TIME-01-25-39")]
+    partial class RenameProjectIdToPublicProjectId_DATE20251121_TIME012539
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.0");
