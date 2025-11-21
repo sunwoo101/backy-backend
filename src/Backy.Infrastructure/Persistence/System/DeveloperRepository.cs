@@ -6,9 +6,14 @@ namespace Backy.Infrastructure.Persistence.System;
 
 public sealed class DeveloperRepository(BackyDbContext db) : IDeveloperRepository
 {
-    public async Task<bool> ExistsAsync(string normalizedEmail)
+    public async Task<bool> EmailExistsAsync(string normalizedEmail)
     {
         return await db.Developers.AnyAsync(d => d.Email == normalizedEmail);
+    }
+
+    public async Task<bool> UsernameExistsAsync(string normalizedUsername)
+    {
+        return await db.Developers.AnyAsync(d => d.Username == normalizedUsername);
     }
 
     public async Task AddAsync(Developer developer)
