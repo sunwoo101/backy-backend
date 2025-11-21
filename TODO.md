@@ -5,7 +5,7 @@ These endpoints are used by developers via the Backy developer dashboard and req
 
 ### Developer
 - [x] Developer registration
-- [ ] Developer login
+- [x] Developer login
 - [ ] Developer logout
 - [ ] Refresh token support
 - [ ] Developer email verification
