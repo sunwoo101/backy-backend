@@ -1,3 +1,4 @@
+using Backy.Domain.Common.System;
 using Backy.Domain.Enums.System;
 
 namespace Backy.Domain.Entities.System;
@@ -6,7 +7,7 @@ namespace Backy.Domain.Entities.System;
 /// Represents a developer who has access to a project.
 /// The owner can invite collaborators with specific roles and permissions.
 /// </summary>
-public class Collaborator
+public class Collaborator : BaseEntity
 {
     /// <summary>
     /// The unique identifier of the project this collaborator belongs to.

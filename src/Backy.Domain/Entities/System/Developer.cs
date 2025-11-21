@@ -9,14 +9,19 @@ namespace Backy.Domain.Entities.System;
 public class Developer : BaseEntity
 {
     /// <summary>
-    /// The developer’s display name.
+    /// The developer’s display username.
     /// </summary>
-    public required string Name { get; set; }
+    public required string Username { get; set; }
 
     /// <summary>
     /// The developer’s unique email address for authentication and contact.
     /// </summary>
     public required string Email { get; set; }
+
+    /// <summary>
+    /// Is the email verified
+    /// </summary>
+    public bool EmailVerified { get; set; } = false;
 
     /// <summary>
     /// The hashed password used for authentication.
@@ -26,5 +31,5 @@ public class Developer : BaseEntity
     /// <summary>
     /// The collection of projects owned by this developer.
     /// </summary>
-    public ICollection<Project>? Projects { get; set; }
+    public ICollection<Project> Projects { get; set; } = [];
 }

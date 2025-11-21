@@ -10,8 +10,8 @@ namespace Backy.Application.Features.System.Ping;
 /// </summary>
 public sealed class PingHandler
 {
-    public Task<string> Handle(PingRequest _)
+    public async Task<string> Handle(PingRequest _)
     {
-        return Task.FromResult("pong");
+        return "pong";
     }
 }
