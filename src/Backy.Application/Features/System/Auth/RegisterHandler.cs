@@ -21,13 +21,19 @@ public sealed class RegisterHandler(
             return "Password is missing";
 
         var email = request.Email.Trim().ToLowerInvariant();
-        var username = request.Username.Trim();
+        var username = request.Username.Trim().ToLowerInvariant();
 
-        if (!IsValidEmail(request.Email))
+        if (!IsValidEmail(email))
             return "Email is invalid.";
 
-        if (!IsValidUsername(request.Username))
+        if (!IsValidUsername(username))
             return "Username is invalid.";
+
+        if (await developerRepository.EmailExistsAsync(email))
+            return "Email already registered";
+
+        if (await developerRepository.UsernameExistsAsync(username))
+            return "Username already registered";
 
         if (request.Password.Length < 8)
             return "Password must be at least 8 characters";
@@ -40,9 +46,6 @@ public sealed class RegisterHandler(
 
         if (!request.Password.Any(c => !char.IsLetterOrDigit(c)))
             return "Password must contain a special character";
-
-        if (await developerRepository.ExistsAsync(email))
-            return "Email already registered";
 
         var hash = passwordHasher.Hash(request.Password);
 
